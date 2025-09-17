@@ -1,13 +1,41 @@
-/**
- * FarmConnect App
- * Entry point
- */
+import React from "react";
+import { NavigationContainer } from "@react-navigation/native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
+import { createStackNavigator } from "@react-navigation/stack";
 
-import React from 'react';
-import AppNavigator from './src/navigation/AppNavigator';
+import LoginScreen from "./screens/LoginScreen";
+import RegisterScreen from "./screens/RegisterScreen";
+import DashboardScreen from "./screens/DashboardScreen";
+import AddProductScreen from "./screens/AddProductScreen";
+import MarketScreen from "./screens/MarketScreen";
+import ProfileScreen from "./screens/ProfileScreen";
+import OrdersScreen from "./screens/OrdersScreen";
+import NotificationsScreen from "./screens/NotificationsScreen";
 
-const App = () => {
-  return <AppNavigator />;
-};
+const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
-export default App;
+function MainTabs() {
+  return (
+    <Tab.Navigator>
+      <Tab.Screen name="Dashboard" component={DashboardScreen} />
+      <Tab.Screen name="Add Product" component={AddProductScreen} />
+      <Tab.Screen name="Market" component={MarketScreen} />
+      <Tab.Screen name="Orders" component={OrdersScreen} />
+      <Tab.Screen name="Notifications" component={NotificationsScreen} />
+      <Tab.Screen name="Profile" component={ProfileScreen} />
+    </Tab.Navigator>
+  );
+}
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Stack.Navigator screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Login" component={LoginScreen} />
+        <Stack.Screen name="Register" component={RegisterScreen} />
+        <Stack.Screen name="Main" component={MainTabs} />
+      </Stack.Navigator>
+    </NavigationContainer>
+  );
+}
