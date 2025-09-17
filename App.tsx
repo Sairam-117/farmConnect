@@ -3,14 +3,14 @@ import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import LoginScreen from "./screens/LoginScreen.js";
-import RegisterScreen from "./screens/RegisterScreen.js";
-import DashboardScreen from "./screens/DashboardScreen.js";
-import AddProductScreen from "./screens/AddProductScreen.js";
-import MarketScreen from "./screens/MarketScreen.js";
-import ProfileScreen from "./screens/ProfileScreen.js";
-import OrdersScreen from "./screens/OrdersScreen.js";
-import NotificationsScreen from "./screens/NotificationsScreen.js";
+import LoginScreen from "../screens/LoginScreen.tsx";
+import RegisterScreen from "../screens/RegisterScreen.tsx";
+import DashboardScreen from "../screens/DashboardScreen.tsx";
+import AddProductScreen from "../screens/AddProductScreen.tsx";
+import MarketScreen from "../screens/MarketScreen.tsx";
+import ProfileScreen from "../screens/ProfileScreen.tsx";
+import OrdersScreen from "../screens/OrdersScreen.tsx";
+import NotificationsScreen from "../screens/NotificationsScreen.tsx";
 
 export type RootStackParamList = {
   Login: undefined;
