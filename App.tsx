@@ -1,18 +1,24 @@
-import React from "react";
+import * as React from "react";
 import { NavigationContainer } from "@react-navigation/native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import { createStackNavigator } from "@react-navigation/stack";
 
-import LoginScreen from "./screens/LoginScreen";
-import RegisterScreen from "./screens/RegisterScreen";
-import DashboardScreen from "./screens/DashboardScreen";
-import AddProductScreen from "./screens/AddProductScreen";
-import MarketScreen from "./screens/MarketScreen";
-import ProfileScreen from "./screens/ProfileScreen";
-import OrdersScreen from "./screens/OrdersScreen";
-import NotificationsScreen from "./screens/NotificationsScreen";
+import LoginScreen from "./screens/LoginScreen.js";
+import RegisterScreen from "./screens/RegisterScreen.js";
+import DashboardScreen from "./screens/DashboardScreen.js";
+import AddProductScreen from "./screens/AddProductScreen.js";
+import MarketScreen from "./screens/MarketScreen.js";
+import ProfileScreen from "./screens/ProfileScreen.js";
+import OrdersScreen from "./screens/OrdersScreen.js";
+import NotificationsScreen from "./screens/NotificationsScreen.js";
 
-const Stack = createStackNavigator();
+export type RootStackParamList = {
+  Login: undefined;
+  Register: undefined;
+  Main: undefined;
+};
+
+const Stack = createStackNavigator<RootStackParamList>();
 const Tab = createBottomTabNavigator();
 
 function MainTabs() {
