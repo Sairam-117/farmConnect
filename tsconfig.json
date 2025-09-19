@@ -1,5 +1,17 @@
 {
-  "extends": "@react-native/typescript-config",
+  "compilerOptions": {
+    "target": "esnext",
+    "module": "esnext",
+    "lib": ["esnext"],
+    "allowJs": true,
+    "skipLibCheck": true,
+    "esModuleInterop": true,
+    "moduleResolution": "node",
+    "noEmit": true,
+    "isolatedModules": true,
+    "jsx": "react-jsx",          // 👈 fixes <App /> JSX error
+    "types": ["jest", "react", "react-native"]
+  },
   "include": ["**/*.ts", "**/*.tsx"],
-  "exclude": ["**/node_modules", "**/Pods"]
+  "exclude": ["node_modules", "babel.config.js", "metro.config.js", "jest.config.js"]
 }

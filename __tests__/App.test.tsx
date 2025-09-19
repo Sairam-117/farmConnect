@@ -3,11 +3,17 @@
  */
 
 import React from 'react';
-import ReactTestRenderer from 'react-test-renderer';
-import App from '../App';
+import * as renderer from 'react-test-renderer';
+import App from '../App';   // adjust path if needed
 
-test('renders correctly', async () => {
-  await ReactTestRenderer.act(() => {
-    ReactTestRenderer.create(<App />);
+const { act } = renderer;
+
+test('App renders without crashing', async () => {
+  let tree;
+  await act(async () => {
+    tree = renderer.create(<App />);
   });
+
+  expect(tree).toBeTruthy();
+  expect(tree.toJSON()).toMatchSnapshot();
 });
